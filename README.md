@@ -14,6 +14,7 @@ Contains:
 * Sass support, just import your styles wherever you need them
 * eslint to keep your js readable
 * Webpack dashboard
+* Aliases
 * much more...
 
 
@@ -31,6 +32,15 @@ Yup! Take a look:
 ![](http://jpsierens.com/wp-content/uploads/2016/06/HMR4.gif)
 
 The app updates without the browser having to reload. You don't lose state!
+
+## Aliases
+
+You don't need to use the painful `../../../` to find your imported file. Each path in the *app* root is accessible via its name.
+
+```
+import rootReducer from 'reducers';
+import About from 'components/About';
+```
 
 ## Build the app
 ```npm run build```

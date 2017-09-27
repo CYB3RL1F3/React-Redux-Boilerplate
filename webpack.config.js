@@ -5,6 +5,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var DashboardPlugin = require('webpack-dashboard/plugin');
 var helpers = require('./helpers');
+var aliases = require('./aliases');
 
 module.exports = {
     devtool: 'eval-source-map',
@@ -29,11 +30,23 @@ module.exports = {
         new DashboardPlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
         new webpack.DefinePlugin({
           'process.env.NODE_ENV': JSON.stringify('development')
         })
     ],
+    resolve: {
+
+      /*
+       * An array of extensions that should be used to resolve modules.
+       *
+       * See: http://webpack.github.io/docs/configuration.html#resolve-extensions
+       */
+      extensions: ['.js', '.json'],
+
+      // An array of directory names to be resolved to the current directory
+      alias: aliases
+    },
     module: {
         rules: [
             {
