@@ -1,6 +1,6 @@
 ![](http://jpsierens.com/wp-content/uploads/2016/06/react-eco-wp.gif)
 
-# webpack-react-redux
+# react-redux-boilerplate
 A boilerplate for playing around with react, redux and react-router with the help of webpack.
 
 Contains:
